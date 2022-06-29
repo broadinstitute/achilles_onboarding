@@ -1,0 +1,11 @@
+﻿Achilles Screening Project ID,Stripped Cell line name,Culture Medium,Culture Type,Arxspan Reg ID,Virus Pool Name
+ASP1907,UMUC10-311Cas9,MEM + 10% FBS + 1% NEAA + 2mM Glutamine,Adherent,ACH-001412,ParalogV2
+ASP1909,UMUC3-311Cas9,MEM + 10% FBS,Adherent,ACH-000522,ParalogV2
+ASP1884,ICC8-311Cas9,RPMI + 10% FBS,Adherent,ACH-001848,ParalogV2
+ASP1887,ICC9-311Cas9,RPMI + 10% FBS,Adherent,ACH-001849,ParalogV2
+ASP1940,647V-311Cas9,DMEM + 15% FBS + 2mM Glutamax,Adherent,ACH-000896,ParalogV2
+ASP1943,HT29-311Cas9,McCoy's 5A + 10% FBS,Adherent,ACH-000552,ParalogV2
+ASP1829,CCLFPEDS1041T,RPMI + 10% FBS,?,ACH-002939,Humagne
+ASP1830,CCLFPEDS1046T,RPMI + 10% FBS,?,ACH-002938,Humagne
+ASP1955,WSUAML,RPMI + 10% heat inactivated FBS,Suspension,ACH-002994-01,Humagne
+ASP1843,PWR1E,Keratinocyte Serum Free Medium (K-SFM),Adherent,ACH-001383-02,Humagne

@@ -1,0 +1,9 @@
+﻿Achilles Screening Project ID,Stripped Cell line name,Culture Medium,Culture Type,Arxspan Reg ID,Virus Pool Name
+ASP1851,NCIH498,"RPMI 1640 + 10% FBS
+",Mixed,ACH-002496,Humagne
+ASP1917,TGBC18TKB,DMEM + 5% FBS,Adherent,ACH-002023,ParalogV2
+ASP1906,5637,RPMI + 10% FBS,Mixed adherent and suspension,ACH-000905,ParalogV2
+ASP1908,253J,DMEM + 10% FBS,Adherent,ACH-000011,ParalogV2
+ASP1905,BC3C,McCoy's 5A + 10% FBS,Adherent,ACH-000593,ParalogV2
+ASP1904,COV644,DMEM + 10% FBS + 2mM L-glutamine,Adherent,ACH-000608,ParalogV2
+ASP1896,ES2,RPMI + 10% FBS,Adherent,ACH-000906,ParalogV2

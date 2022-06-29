@@ -1,0 +1,13 @@
+﻿Achilles Screening Project ID,Stripped Cell line name,Culture Medium,Culture Type,Arxspan Reg ID,Virus Pool Name
+ASP1613,CCLFNEURO0010T,TSM,Adherent,ACH-002413,Humagne
+ASP1617,CCLFNEURO0017T,TSM,Adherent,ACH-002418,Humagne
+ASP1949,CCLFNEURO0037T,TSM,Adherent,ACH-002457,Humagne
+ASP1954,CCLFNEURO0032T,TSM,Adherent,ACH-002454,Humagne
+ASP1989,UACC462,Leibovitz's L-15+ 5% FBS +0.01 mg/ml transferrin; 0.01 mg/ml insulin; 5 ug/mL catalase; 3.6 ug/mL hydrocortisone; 70 ug/mL o-phosphoethanolamine; 10 ng/ml human recombinant epidermal growth factor (EGF); 3 ng/ml estradiol; 0.8 ng/ml Na-L-thyroxine; extra 2 mM glutamine,Adherent,ACH-001405,Humagne
+ASP1899,MCAS-311Cas9,DMEM + 15% FBS,Adherent,ACH-000796,ParalogV2
+ASP2014,SNU638-311Cas9,RPMI + 10% FBS + 300mg/L L-glutamine + 25mM HEPES + 25mM Sodium bicarbonate,Adherent,ACH-001664,ParalogV2
+ASP2017,HUH1-311Cas9,DMEM + 10% FBS,Adherent,ACH-000475,ParalogV2
+ASP2018,Li7-311Cas9,RPMI + 10% FBS,Adherent,ACH-000471,ParalogV2
+ASP1963,LU65-311Cas9,RPMI + 20% FBS,Suspension,ACH-000438,ParalogV2
+ASP1898,OVCAR5-311Cas9,RPMI + 5% FBS,Adherent,ACH-001151,ParalogV2
+ASP1900,OCIC4P-311Cas9,RPMI + 10%FBS,Adherent,ACH-001719,ParalogV2

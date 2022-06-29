@@ -1,0 +1,12 @@
+﻿Achilles Screening Project ID,Stripped Cell line name,Culture Medium,Culture Type,Arxspan Reg ID,Virus Pool Name
+ASP1871,NCIH774,HITES + 5% FBS,Suspension,ACH-003061-01,Humagne
+ASP1868,CAHPV10,K-SFM + 0.05mg/ml BPE + 5ng/ml EGF,Adherent,ACH-003057,Humagne
+ASP1923,EAHY926,DMEM + 10% FBS,N/A,ACH-003017,Humagne
+ASP1884,ICC8-311Cas9,RPMI + 10% FBS,Adherent,ACH-001848,ParalogV2
+ASP1714,UACC3133-311Cas9,L15 + 5% FBS + 2mM Glutamine + 0.01mg/ml Insulin + 0.01mg/ml Transferrin + 3.6ug/ml Hydrocortisone + 5ug/ml Catalase,Adherent,ACH-001683,Avana
+ASP1947,NCIH1882,"DMEM:F12 Medium (HITES medium) + 5% FBS + 0.005 mg/ml Insulin, 0.01 mg/ml Transferrin, 30nM Sodium selenite (final conc.), 10 nM Hydrocortisone (final conc.), 10 nM beta-estradiol (final conc.), extra 2mM L-glutamine (for final conc. of 4.5 mM)",Adherent,ACH-002490-01,Humagne
+ASP1990,SNU228,"RPMI1640 with L-glutamine (300mg/L), 25mM HEPES and 25mM NaHCO3, 90%; heat inactivated fetal bovine serum (FBS), 10%",Adherent,ACH-002534,Humagne
+ASP1991,EB3,RPMI + 10% FBS,Suspension,ACH-002236,Humagne
+ASP1973,HCC461-311Cas9,RPMI + 10% FBS,Adherent,ACH-000339,ParalogV2
+ASP1975,ONCODG1-311Cas9,RPMI + 10% FBS,Adherent,ACH-000013,ParalogV2
+ASP1945,COLO201-311Cas9,RPMI + 10% FBS,Mixed adherent and suspension,ACH-000253,ParalogV2
