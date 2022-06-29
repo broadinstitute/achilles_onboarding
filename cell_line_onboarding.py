@@ -11,7 +11,17 @@ def load_csv_input(file_path, file_name):
 
 #function to create new cell line sheet using metadata
     #function input should be a pandas series with information: Achilles Screening Project ID, Stripped Cell line name, Culture Medium, Culture Type, Arxspan Reg ID, Virus Pool Name
-def create_new_sheet(onboarding_metadata): 
+def create_new_sheet(onboarding_metadata):
+    #variables for each piece of information in metadata
+    metadata_dict = {
+        'name' : onboarding_metadata['Stripped Cell line name'].upper().replace('-311CAS9', '').replace('-ENCAS12A', ''),
+        'library' : onboarding_metadata['Virus Pool Name'].replace('-', ''),
+        'asp_id' : onboarding_metadata['Achilles Screening Project ID'],
+        'media' : onboarding_metadata['Culture Medium'],
+        'culture_type' : onboarding_metadata['Culture Type'],
+        'arx_id' : onboarding_metadata['Arxspan Reg ID'],
+        }
+    
     #template file paths and file names
     template_info = pd.read_csv(r'template_file_paths/template_file_paths.csv')
     template_info_library = template_info[template_info['library'].isin([metadata_dict['library'].upper()])]
@@ -25,15 +35,6 @@ def create_new_sheet(onboarding_metadata):
     # dictionary for each datapoint and corresponding cell in the excel file - change the cell positions if the template positions is changed in any way
     excel_cell_positions = {'name' : 'D3', 'library' : 'D25', 'asp_id': 'D5', 
                             'media' : 'D9', 'culture_type' : 'D11', 'arx_id' : 'D4'}
-    #variables for each piece of information in metadata
-    metadata_dict = {
-        'name' : onboarding_metadata['Stripped Cell line name'].upper().replace('-311CAS9', '').replace('-ENCAS12A', ''),
-        'library' : onboarding_metadata['Virus Pool Name'].replace('-', ''),
-        'asp_id' : onboarding_metadata['Achilles Screening Project ID'],
-        'media' : onboarding_metadata['Culture Medium'],
-        'culture_type' : onboarding_metadata['Culture Type'],
-        'arx_id' : onboarding_metadata['Arxspan Reg ID'],
-        }
     
     #input information into corresponding cell in file
     for key, value in excel_cell_positions.items():
