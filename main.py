@@ -36,12 +36,12 @@ def main():
     for index, row in onboarding_data.iterrows():
         data = row.to_dict()
         try: 
-            print('Creating excel file for {}...'.format(data['Stripped Cell line name']))
+            print('Creating excel file for {}...'.format(data['STRIPPED Cell Line Name DepMap']))
             create_new_sheet(data)
-            success.append(data['Stripped Cell line name'])
+            success.append(data['STRIPPED Cell Line Name DepMap'])
         except Exception:
-            print('Failed to create excel file for {}'.format(data['Stripped Cell line name']))
-            fail.append(data['Stripped Cell line name'])
+            print('Failed to create excel file for {}'.format(data['STRIPPED Cell Line Name DepMap']))
+            fail.append(data['STRIPPED Cell Line Name DepMap'])
             pass
         
     #print information for which sheets were created and which were not

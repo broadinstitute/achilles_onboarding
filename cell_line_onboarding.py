@@ -4,58 +4,47 @@ import os
 
 #load csv input of information for new cell lines to onboard
 #csv input columns should be as follows:
-    #COLUMN NAMES MUST BE EXACT, order is not important
-    # Achilles Screening Project ID, Stripped Cell line name, Culture Medium, Culture Type, Arxspan Reg ID, Virus Pool Name
+    #COLUMNS ON THE INPUT ONBOARDING FILE MUST EXACTLY MATCH DATAPOINTS LISTED ON cell_locations/datapoint_cell_locations.csv
 def load_csv_input(file_path, file_name):
     input_file = pd.read_csv(file_path + file_name, low_memory = False)
     return input_file
 
 #function to create new cell line sheet using metadata
-    #function input should be a pandas series with information: Achilles Screening Project ID, Stripped Cell line name, Culture Medium, Culture Type, Arxspan Reg ID, Virus Pool Name
+    #function input should be a dictionary with information that is to be entered into the template file
+    #datapoints to input are customizable based on the file in r'cell_locations/datapoint_cell_locations.csv'
 def create_new_sheet(onboarding_metadata):
-    #variables for each piece of information in metadata
-    metadata_dict = {
-        'name' : onboarding_metadata['Stripped Cell line name'].upper().replace('-311CAS9', '').replace('-ENCAS12A', ''),
-        'library' : onboarding_metadata['Virus Pool Name'].replace('-', ''),
-        'asp_id' : onboarding_metadata['Achilles Screening Project ID'],
-        'media' : onboarding_metadata['Culture Medium'],
-        'culture_type' : onboarding_metadata['Culture Type'],
-        'arx_id' : onboarding_metadata['Arxspan Reg ID'],
-        }
-
     #declare output variables (output path and output name)
     output_file_path = r'/Volumes/GoogleDrive/Shared drives/GPP Cloud /Screening /Achilles/CRISPR/CRISPR screens/'
-    screens_completed_path = output_file_path = r'/Volumes/GoogleDrive/Shared drives/GPP Cloud /Screening /Achilles/CRISPR/CRISPR screens/Screens completed passaging/'
-    output_file_name = '{}_{}_{}.xlsx'.format(metadata_dict['name'].upper(), metadata_dict['library'].upper(), metadata_dict['asp_id'].upper())
+    screens_completed_path = r'/Volumes/GoogleDrive/Shared drives/GPP Cloud /Screening /Achilles/CRISPR/CRISPR screens/Screens completed passaging/'
+    output_file_name = '{}_{}_{}.xlsx'.format(onboarding_metadata['STRIPPED Cell Line Name DepMap'].upper(), onboarding_metadata['Library'].upper(), onboarding_metadata['ASP ID'].upper())
 
     #check to see if file already exists, and do not save if sheet does already exist
     if os.path.exists(output_file_path + output_file_name):
         print('File already exists for {}! Will not overwrite existing file.\n'.format(output_file_name))
+        raise Exception
     elif os.path.exists(screens_completed_path + output_file_name):
         print('File already exists for {}! Will not overwrite existing file.\n'.format(output_file_name))
+        raise Exception
     else: #create new file and save if there is not an existing sheet
         #template file paths and file names
         template_info = pd.read_csv(r'template_file_paths/template_file_paths.csv')
-        template_info_library = template_info[template_info['library'].isin([metadata_dict['library'].upper()])]
+        template_info_library = template_info[template_info['library'].isin([onboarding_metadata['Library'].upper()])]
         template_file_path = template_info_library['file_path'].values
         template_file_name = template_info_library['file_name'].values
 
         #Open template for specific library
         template = load_workbook(''.join(template_file_path + template_file_name))
-        template_sheet = template['Cell Line Information']
         
-        # dictionary for each datapoint and corresponding cell in the excel file - change the cell positions if the template positions is changed in any way
-        excel_cell_positions = {'name' : 'D3', 'library' : 'D25', 'asp_id': 'D5', 
-                                'media' : 'D9', 'culture_type' : 'D11', 'arx_id' : 'D4'}
+        #dictionary for each datapoint and corresponding cell in the excel file - change the cell positions if the template positions is changed in any way
+        excel_cell_positions = pd.read_csv(r'cell_locations/datapoint_cell_locations.csv').set_index('datapoint')
         
         #input information into corresponding cell in file
-        for key, value in excel_cell_positions.items():
-            template_sheet[value] = metadata_dict[key]
+        for key, value in onboarding_metadata.items():
+            datapoint_info = excel_cell_positions.loc[key]  #get info for a given datapoint such as tab_name, cell_location
+            template_sheet = template[datapoint_info['tab_name']] #open template to corresponding tab for datapoint
+            
+            template_sheet[datapoint_info['cell_location']] = value #set excel cell as value
 
         #Save the spreadsheets
         template.save(filename = output_file_path + output_file_name)
-        print('Succesfully created sheet for {} {}\n'.format(metadata_dict['name'].upper(), metadata_dict['library'].upper()))
-
-
-
-
+        print('Succesfully created sheet for {} {}     :)\n'.format(onboarding_metadata['STRIPPED Cell Line Name DepMap'].upper(), onboarding_metadata['Library'].upper()))
