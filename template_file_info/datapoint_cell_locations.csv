@@ -1,0 +1,19 @@
+﻿datapoint,tab_name,cell_location,library
+ASP ID,Cell Line Information,D5,ParalogV2
+STRIPPED Cell Line Name DepMap,Cell Line Information,D3,ParalogV2
+Media (Culture Conditions),Cell Line Information,D9,ParalogV2
+Cell Type,Cell Line Information,D11,ParalogV2
+Registration ID,Cell Line Information,D4,ParalogV2
+Library,Cell Line Information,D25,ParalogV2
+ASP ID,Cell Line Information,D5,Humagne
+STRIPPED Cell Line Name DepMap,Cell Line Information,D3,Humagne
+Media (Culture Conditions),Cell Line Information,D9,Humagne
+Cell Type,Cell Line Information,D11,Humagne
+Registration ID,Cell Line Information,D4,Humagne
+Library,Cell Line Information,D25,Humagne
+ASP ID,Cell Line Information,D5,Avana4
+STRIPPED Cell Line Name DepMap,Cell Line Information,D3,Avana4
+Media (Culture Conditions),Cell Line Information,D9,Avana4
+Cell Type,Cell Line Information,D11,Avana4
+Registration ID,Cell Line Information,D4,Avana4
+Library,Cell Line Information,D25,Avana4

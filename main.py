@@ -22,7 +22,7 @@ def main():
         input_file_name = input_file_name + '.csv'
 
     #create pd df from input information csv file
-    input_file_path = r'input_onboarding_csv/'   #path of input file
+    input_file_path = r'input_onboarding_data/'   #path of input file
     onboarding_data = load_csv_input(input_file_path, input_file_name)
 
     #load input file as dictionary

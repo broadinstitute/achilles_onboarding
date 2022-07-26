@@ -27,7 +27,7 @@ def create_new_sheet(onboarding_metadata):
         raise Exception
     else: #create new file and save if there is not an existing sheet
         #template file paths and file names
-        template_info = pd.read_csv(r'template_file_paths/template_file_paths.csv')
+        template_info = pd.read_csv(r'template_file_info/template_file_paths.csv')
         template_info_library = template_info[template_info['library'].isin([onboarding_metadata['Library'].upper()])]
         template_file_path = template_info_library['file_path'].values
         template_file_name = template_info_library['file_name'].values
@@ -36,7 +36,8 @@ def create_new_sheet(onboarding_metadata):
         template = load_workbook(''.join(template_file_path + template_file_name))
         
         #dictionary for each datapoint and corresponding cell in the excel file - change the cell positions if the template positions is changed in any way
-        excel_cell_positions = pd.read_csv(r'cell_locations/datapoint_cell_locations.csv').set_index('datapoint')
+        excel_cell_positions = pd.read_csv(r'template_file_info/datapoint_cell_locations.csv').set_index('datapoint')
+        excel_cell_positions = excel_cell_positions[excel_cell_positions['library'].str.upper() == onboarding_metadata['Library'].upper()]
         
         #input information into corresponding cell in file
         for key, value in onboarding_metadata.items():
