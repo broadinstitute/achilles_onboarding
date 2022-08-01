@@ -40,7 +40,7 @@ def main():
             create_new_sheet(data)
             success.append(data['STRIPPED Cell Line Name DepMap'])
         except Exception:
-            print('Failed to create excel file for {}'.format(data['STRIPPED Cell Line Name DepMap']))
+            print('Failed to create excel file for {}\n'.format(data['STRIPPED Cell Line Name DepMap']))
             fail.append(data['STRIPPED Cell Line Name DepMap'])
             pass
         
