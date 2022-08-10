@@ -1,4 +1,4 @@
-﻿ASP ID,STRIPPED Cell Line Name DepMap,Media (Culture Conditions),Cell Type,Registration ID,Library,Project
-TEST,TEST,TEST,TEST,TEST,ParalogV2,TEST
-TEST,TEST,TEST,TEST,TEST,Humagne,TEST
-TEST,TEST,TEST,TEST,TEST,Avana4,TEST
+﻿ASP ID,STRIPPED Cell Line Name DepMap,Media (Culture Conditions),Cell Type,Registration ID,Library
+ASP9999,TEST,TEST,TEST,TEST,ParalogV2
+ASP9999,TEST,TEST,TEST,TEST,Humagne
+ASP9999,TEST,TEST,TEST,TEST,Avana4

@@ -35,6 +35,7 @@ def main():
     #iterate over inputted csv file - each row contains relevant information for that cell line
     for index, row in onboarding_data.iterrows():
         data = row.to_dict()
+
         try: 
             print('Creating excel file for {}...'.format(data['STRIPPED Cell Line Name DepMap']))
             create_new_sheet(data)

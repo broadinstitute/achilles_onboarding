@@ -45,12 +45,18 @@ def create_new_sheet(onboarding_metadata):
     
     #input information into corresponding cell in file
     for key, value in onboarding_metadata.items():
-        datapoint_info = excel_cell_positions.loc[key]  #get info for a given datapoint such as tab_name, cell_location
+        try:
+            datapoint_info = excel_cell_positions.loc[key]  #get info for a given datapoint such as tab_name, cell_location
+        except:
+            print('Missing {} cell location in template files. Add {} information to /template_file_info/datapoint_cell_locations.csv'.format(key,key))
+            raise Exception
+        
         template_sheet = template[datapoint_info['tab_name']] #open template to corresponding tab for datapoint
         
         template_sheet[datapoint_info['cell_location']] = value #set excel cell as value
 
     #Save the spreadsheets
+    output_file_path = '/Volumes/GoogleDrive/Shared drives/GPP Cloud /Screening /Achilles/CRISPR/CRISPR screens/'
     template.save(filename = output_file_path + output_file_name)
     print('Succesfully created sheet for {} {}     :)\n'.format(onboarding_metadata['STRIPPED Cell Line Name DepMap'].upper(), onboarding_metadata['Library'].upper()))
 
